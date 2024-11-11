@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AD7D0715-8DBD-4475-838A-20D07F300426}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{85EDA536-2665-4934-9535-7D849305B5E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Domain", "src\CommunitySafety.Domain\CommunitySafety.Domain.csproj", "{C8187D9B-E829-4A7E-B05D-6D2AF26B4803}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Infrastructure", "src\CommunitySafety.Infrastructure\CommunitySafety.Infrastructure.csproj", "{37D272F9-7530-4549-A3DA-28F10FE845B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Application", "src\CommunitySafety.Application\CommunitySafety.Application.csproj", "{52DB1007-DBC7-4700-B354-FF1690598A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunitySafety.WebUI", "src\CommunitySafety.WebUI\CommunitySafety.WebUI.csproj", "{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8187D9B-E829-4A7E-B05D-6D2AF26B4803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8187D9B-E829-4A7E-B05D-6D2AF26B4803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8187D9B-E829-4A7E-B05D-6D2AF26B4803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8187D9B-E829-4A7E-B05D-6D2AF26B4803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D272F9-7530-4549-A3DA-28F10FE845B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D272F9-7530-4549-A3DA-28F10FE845B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D272F9-7530-4549-A3DA-28F10FE845B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D272F9-7530-4549-A3DA-28F10FE845B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DB1007-DBC7-4700-B354-FF1690598A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DB1007-DBC7-4700-B354-FF1690598A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DB1007-DBC7-4700-B354-FF1690598A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DB1007-DBC7-4700-B354-FF1690598A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8187D9B-E829-4A7E-B05D-6D2AF26B4803} = {AD7D0715-8DBD-4475-838A-20D07F300426}
+		{37D272F9-7530-4549-A3DA-28F10FE845B1} = {AD7D0715-8DBD-4475-838A-20D07F300426}
+		{52DB1007-DBC7-4700-B354-FF1690598A5F} = {AD7D0715-8DBD-4475-838A-20D07F300426}
+		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0} = {AD7D0715-8DBD-4475-838A-20D07F300426}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9FA289C-7567-461E-9F26-CE42ACC2CB6B}
+	EndGlobalSection
+EndGlobal
