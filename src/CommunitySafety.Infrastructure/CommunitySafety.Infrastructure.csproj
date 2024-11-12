@@ -10,4 +10,8 @@
     <ProjectReference Include="..\CommunitySafety.Domain\CommunitySafety.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
