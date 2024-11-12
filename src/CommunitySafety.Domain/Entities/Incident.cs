@@ -1,4 +1,7 @@
 ﻿
+using CommunitySafety.Domain.Common;
+using CommunitySafety.Domain.Exceptions;
+
 namespace CommunitySafety.Domain.Entities;
 
 public sealed class Incident : EntityBase
@@ -23,6 +26,15 @@ public sealed class Incident : EntityBase
         Description = description;
         CategoryId = categoryId;
         LocationId = locationId;
+    }
+
+    public void Validate(string Description)
+    {
+        if (string.IsNullOrEmpty(Description))
+            throw new DomainException(ErrorCatalog.NullOrEmptyDescription);
+
+        if (Description.Length < 3)
+            throw new DomainException(ErrorCatalog.InvalidDescription);
     }
 
     #endregion
