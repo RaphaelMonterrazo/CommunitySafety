@@ -4,8 +4,9 @@ using CommunitySafety.Domain.Exceptions;
 
 namespace CommunitySafety.Domain.Entities;
 
-public sealed class Category : EntityBase
+public sealed class Category
 {
+    public int Id { get; private set; }
     public string Name { get; private set; }
     public ICollection<Incident> Incidents { get; private set; }
 
@@ -13,6 +14,13 @@ public sealed class Category : EntityBase
     {
         Validate(name);
         Name = name;
+    }
+
+    public Category(int id, string name)
+    {
+        Validate(name);
+        Id = id;
+        Name = name;        
     }
 
     #region Methods

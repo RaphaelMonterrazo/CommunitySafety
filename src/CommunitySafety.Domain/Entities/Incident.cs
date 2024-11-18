@@ -4,13 +4,14 @@ using CommunitySafety.Domain.Exceptions;
 
 namespace CommunitySafety.Domain.Entities;
 
-public sealed class Incident : EntityBase
+public sealed class Incident
 {
+    public int Id { get; private set; }
     public string Description { get; private set; }
     public DateTime ReportedAt { get; private set; }
-    public long CategoryId { get; set; }
+    public int CategoryId { get; set; }
     public Category Category { get; set; }
-    public long LocationId { get; set; }
+    public int LocationId { get; set; }
     public Location Location { get; set; }
 
     public Incident(string description) 
@@ -21,7 +22,7 @@ public sealed class Incident : EntityBase
 
     #region Methods
 
-    public void Update(string description, long categoryId, long locationId) 
+    public void Update(string description, int categoryId, int locationId) 
     {
         Description = description;
         CategoryId = categoryId;
