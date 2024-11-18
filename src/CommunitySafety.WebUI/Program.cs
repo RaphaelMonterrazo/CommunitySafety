@@ -1,7 +1,12 @@
+using CommunitySafety.Infrastructure.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Utiliza o método de extensão para adicionar o DbContext MySQL
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

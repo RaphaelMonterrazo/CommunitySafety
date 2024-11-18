@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Application", "src\CommunitySafety.Application\CommunitySafety.Application.csproj", "{52DB1007-DBC7-4700-B354-FF1690598A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunitySafety.WebUI", "src\CommunitySafety.WebUI\CommunitySafety.WebUI.csproj", "{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.WebUI", "src\CommunitySafety.WebUI\CommunitySafety.WebUI.csproj", "{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunitySafety.Domain.Tests", "tests\CommunitySafety.Domain.Tests\CommunitySafety.Domain.Tests.csproj", "{1A96F5D8-808D-46D0-AF77-363892625B18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunitySafety.Domain.Tests", "tests\CommunitySafety.Domain.Tests\CommunitySafety.Domain.Tests.csproj", "{1A96F5D8-808D-46D0-AF77-363892625B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunitySafety.Infrastructure.IoC", "src\CommunitySafety.Infrastructure.IoC\CommunitySafety.Infrastructure.IoC.csproj", "{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{1A96F5D8-808D-46D0-AF77-363892625B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A96F5D8-808D-46D0-AF77-363892625B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A96F5D8-808D-46D0-AF77-363892625B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{52DB1007-DBC7-4700-B354-FF1690598A5F} = {AD7D0715-8DBD-4475-838A-20D07F300426}
 		{08F08BD1-1B19-4D68-99A6-FB34EF99F1E0} = {AD7D0715-8DBD-4475-838A-20D07F300426}
 		{1A96F5D8-808D-46D0-AF77-363892625B18} = {85EDA536-2665-4934-9535-7D849305B5E2}
+		{6D0C965B-A32D-4AAF-9FA9-02CD5BF83B2E} = {AD7D0715-8DBD-4475-838A-20D07F300426}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9FA289C-7567-461E-9F26-CE42ACC2CB6B}

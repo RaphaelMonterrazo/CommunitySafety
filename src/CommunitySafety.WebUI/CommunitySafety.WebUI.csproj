@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommunitySafety.Application\CommunitySafety.Application.csproj" />
-    <ProjectReference Include="..\CommunitySafety.Domain\CommunitySafety.Domain.csproj" />
-    <ProjectReference Include="..\CommunitySafety.Infrastructure\CommunitySafety.Infrastructure.csproj" />
+    <ProjectReference Include="..\CommunitySafety.Infrastructure.IoC\CommunitySafety.Infrastructure.IoC.csproj" />
   </ItemGroup>
 
 </Project>
