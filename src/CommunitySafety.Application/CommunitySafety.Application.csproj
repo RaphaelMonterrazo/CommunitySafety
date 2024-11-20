@@ -14,9 +14,4 @@
     <ProjectReference Include="..\CommunitySafety.Domain\CommunitySafety.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
