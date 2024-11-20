@@ -1,11 +1,10 @@
 ﻿
 using CommunitySafety.Domain.Entities;
 
-namespace CommunitySafety.Domain.Interfaces
+namespace CommunitySafety.Domain.Interfaces;
+
+public interface IIncidentRepository
 {
-    public interface IIncidentRepository
-    {
-        Task<IEnumerable<Incident>> GetIncidentsAsync();
-        Task<Incident> CreateAsync(Incident incident);
-    }
+    Task<IEnumerable<Incident>> GetIncidentsAsync();
+    Task<Incident> CreateAsync(Incident incident);
 }

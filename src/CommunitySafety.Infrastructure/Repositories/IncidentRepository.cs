@@ -15,13 +15,13 @@ public class IncidentRepository : IIncidentRepository
     }
     public async Task<Incident> CreateAsync(Incident incident)
     {
-        _context.Add(incident);
+        _context.Incidents.Add(incident);
         await _context.SaveChangesAsync();
         return incident;
     }
 
     public async Task<IEnumerable<Incident>> GetIncidentsAsync()
     {
-        return (IEnumerable<Incident>) await _context.Incidents.ToListAsync();
+        return await _context.Incidents.ToListAsync();
     }
 }
