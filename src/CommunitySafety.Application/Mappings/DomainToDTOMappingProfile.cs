@@ -2,15 +2,14 @@
 using CommunitySafety.Application.DTOs;
 using CommunitySafety.Domain.Entities;
 
-namespace CommunitySafety.Application.Mappings
+namespace CommunitySafety.Application.Mappings;
+
+public class DomainToDTOMappingProfile : Profile
 {
-    public class DomainToDTOMappingProfile : Profile
+    public DomainToDTOMappingProfile()
     {
-        public DomainToDTOMappingProfile()
-        {
-            CreateMap<Category, CategoryDTO>().ReverseMap();
-            CreateMap<Incident, IncidentDTO>().ReverseMap();
-            CreateMap<Location, LocationDTO>().ReverseMap();
-        }
+        CreateMap<Category, CategoryDTO>().ReverseMap();
+        CreateMap<Incident, IncidentDTO>().ReverseMap();
+        CreateMap<Location, LocationDTO>().ReverseMap();
     }
 }
