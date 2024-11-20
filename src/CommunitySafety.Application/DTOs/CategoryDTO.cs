@@ -1,15 +1,14 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace CommunitySafety.Application.DTOs
-{
-    public class CategoryDTO
-    {
-        public int Id { get; set; }
+namespace CommunitySafety.Application.DTOs;
 
-        [Required(ErrorMessage = "The Name is Required")]
-        [MinLength(3)]
-        [MaxLength(50)]
-        public string Name { get; set; }
-    }
+public class CategoryDTO
+{
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "The Name is Required")]
+    [MinLength(3)]
+    [MaxLength(50)]
+    public string Name { get; set; }
 }

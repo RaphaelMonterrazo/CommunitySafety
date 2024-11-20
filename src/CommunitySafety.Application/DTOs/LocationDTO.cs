@@ -1,7 +1,6 @@
 ﻿
-namespace CommunitySafety.Application.DTOs
+namespace CommunitySafety.Application.DTOs;
+
+public class LocationDTO
 {
-    public class LocationDTO
-    {
-    }
 }
