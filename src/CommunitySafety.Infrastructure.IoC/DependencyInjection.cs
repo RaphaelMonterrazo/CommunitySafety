@@ -1,4 +1,7 @@
 ﻿
+using CommunitySafety.Application.Interfaces;
+using CommunitySafety.Application.Mappings;
+using CommunitySafety.Application.Services;
 using CommunitySafety.Domain.Interfaces;
 using CommunitySafety.Infrastructure.Context;
 using CommunitySafety.Infrastructure.Repositories;
@@ -19,6 +22,10 @@ namespace CommunitySafety.Infrastructure.IoC
             );
 
             services.AddScoped<IIncidentRepository, IncidentRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IIncidentService, IncidentService>();
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
         }
