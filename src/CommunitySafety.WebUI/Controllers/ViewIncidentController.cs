@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CommunitySafety.WebUI.Controllers
+namespace CommunitySafety.WebUI.Controllers;
+
+public class ViewIncidentController : Controller
 {
-    public class ViewIncidentController : Controller
+    [HttpGet]
+    public IActionResult Index()
     {
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
 }

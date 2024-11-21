@@ -1,13 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CommunitySafety.Application.Interfaces;
+using CommunitySafety.WebUI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CommunitySafety.WebUI.Controllers
+namespace CommunitySafety.WebUI.Controllers;
+
+public class ReportIncidentController : Controller
 {
-    public class ReportIncidentController : Controller
+    private readonly ICategoryService _categoryServices;
+
+    public ReportIncidentController(ICategoryService categoryService)
     {
-        [HttpGet]
-        public IActionResult Index()
+        _categoryServices = categoryService;              
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Index()
+    {
+        var categoryDto = await _categoryServices.GetCategoriesAsync();
+
+        var incidentViewModel = new IncidentViewModel()
         {
-            return View();
-        }
+            Categories = new SelectList(categoryDto, "Id", "Name")
+        };
+        return View(incidentViewModel);
     }
 }
