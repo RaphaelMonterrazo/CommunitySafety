@@ -1,33 +1,29 @@
 ﻿
+using AutoMapper;
 using CommunitySafety.Application.DTOs;
 using CommunitySafety.Application.Interfaces;
+using CommunitySafety.Domain.Entities;
+using CommunitySafety.Domain.Interfaces;
 
 namespace CommunitySafety.Application.Services;
 
 public class IncidentService : IIncidentService
 {
-    public Task<IEnumerable<IncidentDTO>> GetIncidentsAsync()
+    private readonly IIncidentRepository _incidentRepository;
+    private readonly IMapper _mapper;
+    public IncidentService(IIncidentRepository incidentRepository, IMapper mapper)
     {
-        throw new NotImplementedException();
+        _incidentRepository = incidentRepository;
+        _mapper = mapper;
     }
 
-    public Task<IncidentDTO> GetIncidentByIdAsync(int id)
+    public async Task<IncidentDTO> AddAsync(IncidentDTO incidentDTO)
     {
-        throw new NotImplementedException();
+        var incidentEntity = _mapper.Map<Incident>(incidentDTO);
+
+        var result = await _incidentRepository.CreateAsync(incidentEntity);
+
+        return _mapper.Map<IncidentDTO>(result);
     }
 
-    public Task AddAsync(IncidentDTO incidentDTO)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task UpdateAsync(IncidentDTO incidentDTO)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task RemoveAsync(IncidentDTO incidentDTO)
-    {
-        throw new NotImplementedException();
-    }    
 }

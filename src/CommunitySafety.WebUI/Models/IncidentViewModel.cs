@@ -6,5 +6,6 @@ namespace CommunitySafety.WebUI.Models;
 public class IncidentViewModel
 {
     public IncidentDTO Incident { get; set; }
+    public LocationDTO Location { get; set; }
     public SelectList Categories { get; set; }
 }

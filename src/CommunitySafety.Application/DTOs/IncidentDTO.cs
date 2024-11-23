@@ -1,15 +1,10 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
 namespace CommunitySafety.Application.DTOs;
 
 public class IncidentDTO
 {
-    public int Id { get; set; }
-
-    [Required(ErrorMessage = "The Description is Required")]
-    [MinLength(3)]
-    [MaxLength(50)]
-    public string Description { get; set; }
-    public int CategoryId { get; set; }
+    public int? Id { get; set; }
+    public string? Description { get; set; }
+    public int? CategoryId { get; set; }
+    public int? LocationId { get; set; }
 }

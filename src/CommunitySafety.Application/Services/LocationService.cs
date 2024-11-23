@@ -1,33 +1,38 @@
 ﻿
+using AutoMapper;
 using CommunitySafety.Application.DTOs;
 using CommunitySafety.Application.Interfaces;
+using CommunitySafety.Domain.Entities;
+using CommunitySafety.Domain.Interfaces;
 
 namespace CommunitySafety.Application.Services;
 
 public class LocationService : ILocationService
 {
-    public Task<IEnumerable<LocationDTO>> GetLocationsAsync()
+    private readonly ILocationRepository _locationRepository;
+    private readonly IMapper _mapper;
+
+    public LocationService(ILocationRepository locationRepository, IMapper mapper)
     {
-        throw new NotImplementedException();
+        _locationRepository = locationRepository;
+        _mapper = mapper;
     }
 
-    public Task<LocationDTO> GetLocationByIdAsync()
+    public async Task<LocationDTO> AddAsync(LocationDTO locationDTO)
     {
-        throw new NotImplementedException();
+        var locationEntity = _mapper.Map<Location>(locationDTO);
+
+        await _locationRepository.CreateAsync(locationEntity);
+
+        return _mapper.Map<LocationDTO>(locationEntity);
     }
 
-    public Task AddAsync(LocationDTO locationDTO)
+    public async Task<LocationDTO?> GetLocationByLatitudeAndLongitude(LocationDTO location)
     {
-        throw new NotImplementedException();
-    }
+        var locationEntity = _mapper.Map<Location>(location);
 
-    public Task UpdateAsync(LocationDTO locationDTO)
-    {
-        throw new NotImplementedException();
-    }
+        var result = await _locationRepository.GetLocationByLatitudeAndLongitude(locationEntity);
 
-    public Task RemoveAsync(LocationDTO locationDTO)
-    {
-        throw new NotImplementedException();
-    }    
+        return _mapper.Map<LocationDTO>(result);
+    }
 }

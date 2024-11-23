@@ -23,8 +23,10 @@ namespace CommunitySafety.Infrastructure.IoC
 
             services.AddScoped<IIncidentRepository, IncidentRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IIncidentService, IncidentService>();
+            services.AddScoped<ILocationService, LocationService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;

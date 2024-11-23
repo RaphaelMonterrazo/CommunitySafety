@@ -6,5 +6,6 @@ namespace CommunitySafety.Domain.Interfaces
     public interface ILocationRepository
     {
         Task<Location> CreateAsync(Location location);
+        Task<Location?> GetLocationByLatitudeAndLongitude(Location location);
     }
 }
