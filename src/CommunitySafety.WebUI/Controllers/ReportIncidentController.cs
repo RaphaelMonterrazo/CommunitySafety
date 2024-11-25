@@ -49,7 +49,7 @@ public class ReportIncidentController : Controller
         };
 
         var result = await _incidentService.AddAsync(incidentDTO);
-        
-        return View();
+
+        return Json(new { success = true });
     }
 }

@@ -6,7 +6,7 @@
 
 @section Styles{
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
     <style>
 
@@ -45,7 +45,7 @@
 @section Scripts{
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
+
     <script>
 
         let controllerName = '@ViewContext.RouteData.Values["controller"]';
@@ -102,6 +102,12 @@
             });
         }
 
+        function fecharModal() {    
+            
+            $('#successModal').modal('hide');
+            $("#form")[0].reset();
+        }
+
         $(document).ready(function(){
             
             $('form').on('submit', function(event){
@@ -114,8 +120,10 @@
                     url: actionUrl,
                     data: $(this).serialize(),
                     success: function(response){
-                        console.log("Resp: " + response)
-                        $('#confirmationModal').modal('show');
+                        if(response.success){
+                            $('#successModal').modal('show');
+
+                        }
                     }
                 });
             });
@@ -131,7 +139,7 @@
                 
                 <div class="div-form-child">
                     <h5>Formulário</h5>
-                    <form action="Create" method="post">
+                    <form id="form" action="Create" method="post">
 
                         <div class="form-group">
                             <label asp-for="Incident.CategoryId">Categoria</label>
@@ -171,18 +179,20 @@
     </div>
 </div>
 
-<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal" id="successModal" tabindex=" -1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Confirmação</h5> 
+                <h5 class="modal-title">Informação</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body"> Incidente criado com sucesso! </div>
+            <div class="modal-body">
+                <p>Registro inserido com sucesso!</p>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="confirmButton">OK</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="fecharModal()">Close</button>
             </div>
         </div>
     </div>
