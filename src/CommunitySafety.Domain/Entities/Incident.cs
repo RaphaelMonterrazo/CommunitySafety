@@ -16,6 +16,7 @@ public sealed class Incident
 
     public Incident(string description) 
     {
+        Validate(description);
         Description = description;
         ReportedAt = DateTime.UtcNow;
     }
@@ -29,7 +30,7 @@ public sealed class Incident
         LocationId = locationId;
     }
 
-    public void Validate(string Description)
+    private void Validate(string Description)
     {
         if (string.IsNullOrEmpty(Description))
             throw new DomainException(ErrorCatalog.NullOrEmptyDescription);

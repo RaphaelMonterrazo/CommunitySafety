@@ -31,7 +31,7 @@ public sealed class Category
         Name = name;
     }
 
-    public void Validate(string name) 
+    private void Validate(string name) 
     {
         if (string.IsNullOrEmpty(name))
             throw new DomainException(ErrorCatalog.NullOrEmptyName);
