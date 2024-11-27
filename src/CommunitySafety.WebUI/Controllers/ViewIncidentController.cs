@@ -1,12 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CommunitySafety.Application.Interfaces;
+using CommunitySafety.WebUI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CommunitySafety.WebUI.Controllers;
 
 public class ViewIncidentController : Controller
 {
-    [HttpGet]
-    public IActionResult Index()
+    private readonly IIncidentService _incidentService;
+    public ViewIncidentController(IIncidentService incidentService)
     {
-        return View();
+        _incidentService = incidentService;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Index()
+    {
+        var incidents = await _incidentService.GetAllAsync();
+
+        var viewModel = new ViewIncidentViewModel()
+        {
+            Incidents = incidents.ToList()
+        };
+
+        return View(viewModel);
     }
 }

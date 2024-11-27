@@ -48,7 +48,7 @@ public class ReportIncidentController : Controller
             Description = viewModel.Incident.Description
         };
 
-        var result = await _incidentService.AddAsync(incidentDTO);
+        var result = await _incidentService.AddAsync(incidentDTO);    
 
         return Json(new { success = true });
     }

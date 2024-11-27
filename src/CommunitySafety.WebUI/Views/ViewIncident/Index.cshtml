@@ -1,3 +1,90 @@
-﻿@{
+﻿@model ViewIncidentViewModel
+
+@{
     ViewData["Title"] = "View Page";
 }
+
+@section Styles{
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+        #container-legend{
+            height: 100px;
+            width: 400px;
+        }
+
+    </style>    
+}
+
+@section Scripts{
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="~/js/map.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            createMap();
+            getStartingPosition();
+            setIncidents();
+
+        });
+
+        function setIncidents(){
+            let incidents = @Html.Raw(Json.Serialize(Model.Incidents))
+            addIncidents(incidents);
+        }
+
+    </script>
+    
+}
+
+<div class="d-flex justify-content-center align-items-center ctn-main">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h5>Incidentes</h5>
+                <div class="form-group">
+                    <label for="map"></label>
+                    <div id="map" style="height: 500px;"></div>
+                </div>
+            </div>            
+        </div>
+        <div id="container-legend">
+            <div class="row">
+                <h5>Legenda:</h5>
+
+                <div class="col text-start ">
+                    <div class="form-group">
+                        <p><img src="~/icon/marcador1.png" alt="Agressão" /> - Agressão</p>
+                        <p><img src="~/icon/marcador2.png" alt="Ameaça" /> - Ameaça</p>
+                        <p><img src="~/icon/marcador3.png" alt="Espancamento" /> - Espancamento</p>
+                        <p><img src="~/icon/marcador4.png" alt="Furto" /> - Furto</p>
+                    </div>
+                </div>
+                <div class="col text-start">
+                    <div class="form-group">
+                        <p><img src="~/icon/marcador5.png" alt="Intimidação" /> - Intimidação</p>
+                        <p><img src="~/icon/marcador6.png" alt="Outros" /> - Outros</p>
+                        <p><img src="~/icon/marcador7.png" alt="Perseguição" /> - Perseguição</p>
+                        <p><img src="~/icon/marcador8.png" alt="Roubo" /> - Roubo</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>    
+        
+</div>
