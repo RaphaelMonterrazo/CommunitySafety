@@ -26,4 +26,11 @@ public class IncidentService : IIncidentService
         return _mapper.Map<IncidentDTO>(result);
     }
 
+    public async Task<IEnumerable<IncidentDTO>> GetAllAsync() 
+    {
+        var result = await _incidentRepository.GetIncidentsAsync();
+
+        return _mapper.Map<IEnumerable<IncidentDTO>>(result);
+    }
+
 }
