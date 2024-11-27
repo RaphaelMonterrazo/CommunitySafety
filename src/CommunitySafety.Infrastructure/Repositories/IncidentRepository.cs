@@ -22,6 +22,10 @@ public class IncidentRepository : IIncidentRepository
 
     public async Task<IEnumerable<Incident>> GetIncidentsAsync()
     {
-        return await _context.Incidents.ToListAsync();
+        return await _context
+            .Incidents
+            .Include(i => i.Location)
+            .Include(i => i.Category)
+            .ToListAsync();
     }
 }
