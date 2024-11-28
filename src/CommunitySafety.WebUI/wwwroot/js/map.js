@@ -150,7 +150,7 @@ function addIncidents(incidents) {
 
         L.marker(position, { icon: icons[incident.categoryId] })
             .addTo(map)
-            .bindPopup('Marcador em: <br> Latitude: ' + latitude + '<br> Longitude: ' + longitude)
+            .bindPopup('Informações: <br> Categoria: ' + incident.category.name + '<br> Descrição: ' + incident.description)
             .openPopup();
 
     });
